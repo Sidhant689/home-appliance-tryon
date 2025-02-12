@@ -26,8 +26,8 @@ const App = () => {
 
       {/* Buttons to select appliances */}
       <div style={{ position: "absolute", bottom: 20, left: "50%", transform: "translateX(-50%)", display: "flex", gap: "10px" }}>
-        <button onClick={() => setSelectedAppliance("/fridge_model.glb")}>Fridge</button>
-        <button onClick={() => setSelectedAppliance("/tv_model.glb")}>TV</button>
+        <button onClick={() => setSelectedAppliance("/fridge.glb")}>Fridge</button>
+        <button onClick={() => setSelectedAppliance("/tv.glb")}>TV</button>
         <button onClick={() => setSelectedAppliance("/washing_machine.glb")}>Washing Machine</button>
       </div>
     </div>

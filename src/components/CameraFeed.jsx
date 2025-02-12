@@ -21,14 +21,20 @@ const CameraFeed = () => {
   }, []);
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100vh" }}>
-      <video
-        ref={videoRef}
-        autoPlay
-        playsInline
-        style={{ width: "100%", height: "100vh", objectFit: "cover" }}
-      />
-    </div>
+    <video
+      ref={videoRef}
+      autoPlay
+      playsInline
+      style={{
+        width: "100%",
+        height: "100vh",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        objectFit: "cover",
+        zIndex: -1, // Send to background
+      }}
+    />
   );
 };
 

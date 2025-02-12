@@ -1,21 +1,9 @@
 import React from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 
 const ApplianceModel = ({ modelPath }) => {
   const { scene } = useGLTF(modelPath);
-  return <primitive object={scene} scale={2} />;
+  return <primitive object={scene} scale={1.5} position={[0, -1, 0]} />;
 };
 
-const ApplianceViewer = ({ modelPath }) => {
-  return (
-    <Canvas>
-      <ambientLight intensity={1} />
-      <directionalLight position={[0, 5, 5]} intensity={1.5} />
-      <ApplianceModel modelPath={modelPath} />
-      <OrbitControls />
-    </Canvas>
-  );
-};
-
-export default ApplianceViewer;
+export default ApplianceModel;
