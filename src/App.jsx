@@ -25,7 +25,7 @@ const App = () => {
   const [selectedAppliance, setSelectedAppliance] = useState(null);
 
   return (
-    <div>
+    <>
       <ErrorBoundary>
       <CameraFeed />
 
@@ -63,7 +63,7 @@ const App = () => {
           Washing Machine
         </button>
       </div>
-    </div>
+      </>
   );
 };
 
