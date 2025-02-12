@@ -5,11 +5,18 @@ const CameraFeed = () => {
 
   useEffect(() => {
     async function startCamera() {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: { exact: "environment" } } // Forces back camera
+        });
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+        }
+      } catch (error) {
+        console.error("Error accessing camera:", error);
       }
     }
+
     startCamera();
   }, []);
 
@@ -19,11 +26,7 @@ const CameraFeed = () => {
         ref={videoRef}
         autoPlay
         playsInline
-        style={{
-          width: "100%",
-          height: "100vh",
-          objectFit: "cover",
-        }}
+        style={{ width: "100%", height: "100vh", objectFit: "cover" }}
       />
     </div>
   );
